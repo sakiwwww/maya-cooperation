@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#f4f1ec">
-<title>MAYA COOPERATION STARK</title>
+<title>MAYA COLLECTIVE</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
@@ -75,7 +75,7 @@ textarea{resize:vertical;min-height:70px}
 
 <header class="header">
   <nav class="nav">
-    <div class="brand">MAYA COOPERATION<small>STARK • MODEST WEAR</small></div>
+    <div class="brand">MAYA COLLECTIVE<small>collection • MODEST WEAR</small></div>
     <button class="cart-btn" onclick="openCart()">Keranjang <span class="badge" id="cartCount">0</span></button>
   </nav>
 </header>
@@ -108,8 +108,8 @@ textarea{resize:vertical;min-height:70px}
 
 <footer class="footer">
   <strong>Terima kasih atas pembeliannya</strong>
-  <p>di MAYA COOPERATION STARK ♡</p>
-  <p style="margin-top:18px">© 2026 MAYA COOPERATION STARK</p>
+  <p>di MAYA COLLECTIVE </p>
+  <p style="margin-top:18px">© 2026 MAYA COOPERATION TEAM</p>
 </footer>
 
 <div class="drawer" id="drawer" onclick="if(event.target===this)closeCart()">
@@ -259,7 +259,7 @@ function sendWhatsApp(){
  if(WHATSAPP_NUMBER==="6289510764906"){alert("Nomor WhatsApp toko belum diatur. Edit WHATSAPP_NUMBER di JavaScript.");return}
  let total=0;
  const lines=cart.map(x=>{const p=findProduct(x.id);total+=p.price*x.qty;return `• ${p.name} x${x.qty} = ${rupiah(p.price*x.qty)}`}).join("\n");
- const msg=`Halo MAYA COOPERATION STARK, saya ingin konfirmasi pesanan.\n\nNama: ${name}\nNo. WA: ${phone}\nAlamat: ${address}\n\nPesanan:\n${lines}\n\nTotal: ${rupiah(total)}\nPembayaran: QRIS\n\nSaya sudah melakukan pembayaran. Mohon dikonfirmasi.`;
+ const msg=`Halo MAYA COOPERATION TEAM, saya ingin konfirmasi pesanan.\n\nNama: ${name}\nNo. WA: ${phone}\nAlamat: ${address}\n\nPesanan:\n${lines}\n\nTotal: ${rupiah(total)}\nPembayaran: QRIS\n\nSaya sudah melakukan pembayaran. Mohon dikonfirmasi.`;
  window.open("https://wa.me/"+6289510764906+"?text="+encodeURIComponent(msg),"_blank");
 }
 
