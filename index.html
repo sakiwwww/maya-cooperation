@@ -260,7 +260,7 @@ function sendWhatsApp(){
  let total=0;
  const lines=cart.map(x=>{const p=findProduct(x.id);total+=p.price*x.qty;return `• ${p.name} x${x.qty} = ${rupiah(p.price*x.qty)}`}).join("\n");
  const msg=`Halo MAYA COOPERATION STARK, saya ingin konfirmasi pesanan.\n\nNama: ${name}\nNo. WA: ${phone}\nAlamat: ${address}\n\nPesanan:\n${lines}\n\nTotal: ${rupiah(total)}\nPembayaran: QRIS\n\nSaya sudah melakukan pembayaran. Mohon dikonfirmasi.`;
- window.open("https://wa.me/"6289510764906"?text="+encodeURIComponent(msg),"_blank");
+ window.open("https://wa.me/"+6289510764906+"?text="+encodeURIComponent(msg),"_blank");
 }
 
 renderProducts();renderCart();setQRIS();
