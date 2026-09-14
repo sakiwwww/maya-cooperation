@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maya Cooperation — Busana Muslimah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory: #F7F2EA;
+    --paper: #FCF9F4;
+    --ink: #2B211C;
+    --plum: #6E2A3A;
+    --plum-deep: #571F2C;
+    --sage: #77815E;
+    --sand: #C79A5C;
+    --line: rgba(43,33,28,0.14);
+    --radius: 2px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3, .display{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 0.2px;
+  }
+  p{ margin:0; }
+  img,svg{ display:block; max-width:100%; }
+  a{ color: inherit; text-decoration: none; }
+  button{ font-family: inherit; cursor: pointer; }
+
+  ::selection{ background: var(--sand); color: var(--paper); }
+
+  /* ---------- Header ---------- */
+  header.site{
+    position: sticky;
+    top:0;
+    z-index: 20;
+    background: var(--ivory);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand{
+    display:flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  .brand .mark{
+    font-size: 22px;
+    letter-spacing: 0.5px;
+  }
+  .brand .sub{
+    font-size: 10.5px;
+    color: var(--plum);
+    margin-top: 4px;
+    letter-spacing: 1.5px;
+  }
+  .nav-links{
+    display:flex;
+    gap: 28px;
+    font-size: 14px;
+  }
+  .nav-links a{
+    border-bottom: 1px solid transparent;
+    padding-bottom: 3px;
+    transition: border-color .2s ease;
+  }
+  .nav-links a:hover{ border-color: var(--plum); }
+  @media (max-width: 720px){
+    .nav-links{ display:none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 64px 24px 48px;
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 860px){
+    .hero{ grid-template-columns: 1fr; padding-top: 40px; gap: 32px; }
+  }
+  .hero .eyebrow{
+    color: var(--plum);
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+  }
+  .hero h1{
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1.08;
+    max-width: 12ch;
+  }
+  .hero p.lede{
+    margin-top: 22px;
+    font-size: 16.5px;
+    line-height: 1.65;
+    max-width: 42ch;
+    color: rgba(43,33,28,0.78);
+  }
+  .hero-cta{
+    margin-top: 30px;
+    display:flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    padding: 13px 26px;
+    font-size: 14px;
+    border-radius: var(--radius);
+    border: 1px solid var(--ink);
+  }
+  .btn.primary{
+    background: var(--plum);
+    color: var(--paper);
+    border-color: var(--plum);
+  }
+  .btn.primary:hover{ background: var(--plum-deep); }
+  .btn.ghost:hover{ background: rgba(43,33,28,0.06); }
+
+  .hero-art{
+    position: relative;
+    aspect-ratio: 4/5;
+    background: linear-gradient(160deg, #EADFCF 0%, #DCCBAF 55%, #C9A971 100%);
+    overflow:hidden;
+  }
+  .hero-art svg{ position:absolute; inset:0; width:100%; height:100%; }
+
+  /* ---------- Category sections ---------- */
+  .category{
+    padding: 54px 0 10px;
+    border-top: 1px solid var(--line);
+  }
+  .category-head{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px 26px;
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+  }
+  .category-head h2{
+    font-size: clamp(24px, 3vw, 32px);
+  }
+  .category-head .desc{
+    font-size: 13.5px;
+    color: rgba(43,33,28,0.62);
+    margin-top: 8px;
+    max-width: 46ch;
+  }
+  .scroll-hint{
+    font-size: 12px;
+    color: var(--plum);
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+  }
+
+  .rail{
+    display:flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 4px 24px 28px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+    scrollbar-color: var(--sand) transparent;
+  }
+  .rail::-webkit-scrollbar{ height: 6px; }
+  .rail::-webkit-scrollbar-thumb{ background: var(--sand); border-radius: 4px; }
+
+  .rail::before, .rail::after{ content:""; flex: 0 0 6px; }
+
+  .card{
+    flex: 0 0 auto;
+    width: 250px;
+    scroll-snap-align: start;
+    background: var(--paper);
+    border: 1px solid var(--line);
+  }
+  .card .thumb{
+    position: relative;
+    aspect-ratio: 3/4;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow: hidden;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+  .card .thumb svg{ width: 62%; height: 62%; }
+  .card .thumb img.product-photo{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .card .info{ padding: 16px 16px 18px; }
+  .card .name{
+    font-family: 'Fraunces', serif;
+    font-size: 16.5px;
+    line-height: 1.3;
+  }
+  .card .tag{
+    font-size: 11.5px;
+    color: var(--sage);
+    margin-top: 5px;
+    letter-spacing: 0.3px;
+  }
+  .card .price-row{
+    margin-top: 14px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+  }
+  .card .price{ font-size: 15px; font-weight: 500; }
+  .card .order{
+    font-size: 12px;
+    border: 1px solid var(--ink);
+    padding: 7px 12px;
+    transition: background .2s ease, color .2s ease;
+  }
+  .card .order:hover{ background: var(--ink); color: var(--paper); }
+
+  /* ---------- Trust strip ---------- */
+  .trust{
+    max-width: 1180px;
+    margin: 40px auto 0;
+    padding: 30px 24px;
+    display:flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .trust-item{ flex: 1 1 200px; }
+  .trust-item .num{
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    color: var(--plum);
+  }
+  .trust-item .lbl{
+    font-size: 12.5px;
+    color: rgba(43,33,28,0.65);
+    margin-top: 4px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    margin-top: 60px;
+    background: var(--plum-deep);
+    color: #F3E9E4;
+  }
+  .footer-inner{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 54px 24px 30px;
+    display:grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 30px;
+  }
+  @media (max-width: 720px){
+    .footer-inner{ grid-template-columns: 1fr; gap: 26px; }
+  }
+  .footer-inner .brand{ color: #F3E9E4; }
+  .footer-inner .sub{ color: #D9B9A6; }
+  .footer-inner p{
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #E4CFC5;
+    margin-top: 14px;
+    max-width: 34ch;
+  }
+  .footer-col h3{
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    color: #E9B98F;
+    margin-bottom: 14px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+  }
+  .footer-col a, .footer-col span{
+    display:block;
+    font-size: 13.5px;
+    color: #E4CFC5;
+    margin-bottom: 10px;
+  }
+  .thanks{
+    border-top: 1px solid rgba(243,233,228,0.16);
+  }
+  .thanks-inner{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 26px 24px 30px;
+    text-align: center;
+  }
+  .thanks-inner .msg{
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 15.5px;
+    color: #F3E9E4;
+  }
+  .thanks-inner .brandline{
+    margin-top: 6px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: #E9B98F;
+  }
+</style>
+</head>
+<body>
+<!--
+  CARA PASANG FOTO PRODUK PAKAI CLOUDINARY
+  1. Buat akun gratis di cloudinary.com lalu login ke Dashboard.
+  2. Klik "Upload" dan unggah foto produk kamu (boleh sekaligus banyak foto).
+  3. Setelah terupload, klik foto tersebut lalu salin "Image URL" / "Copy URL"
+     (bentuknya seperti: https://res.cloudinary.com/nama-cloud-kamu/image/upload/v1234567890/nama-file.jpg)
+  4. Di file ini, cari teks seperti GANTI_URL_FOTO_KERUDUNG_PASHMINA_DIAMOND
+     (ada 12, satu per produk — cari pakai Ctrl+F / Cmd+F) lalu ganti
+     seluruh teks itu dengan URL yang sudah disalin dari Cloudinary.
+  5. Simpan file, buka lagi di browser — foto produk otomatis muncul
+     menggantikan gambar garis (ilustrasi placeholder akan hilang sendiri).
+  Tidak perlu ubah bagian lain atau tambah kode apa pun.
+-->
+
+<header class="site">
+  <div class="nav">
+    <div class="brand">
+      <span class="mark">Maya Cooperation</span>
+      <span class="sub">BUSANA MUSLIMAH</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#kerudung">Kerudung</a>
+      <a href="#celana">Celana</a>
+      <a href="#muslim">Pakaian Muslim</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">Koleksi Terbaru</div>
+    <h1>Kerudung dan busana muslimah untuk gerak sehari-hari.</h1>
+    <p class="lede">Bahan adem, jahitan rapi, dan potongan yang nyaman dipakai dari pagi sampai malam. Dipilih langsung oleh Maya Cooperation.</p>
+    <div class="hero-cta">
+      <a class="btn primary" href="#kerudung">Lihat Koleksi Kerudung</a>
+      <a class="btn ghost" href="#muslim">Lihat Pakaian Muslim</a>
+    </div>
+  </div>
+  <div class="hero-art">
+    <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+      <path d="M200 60 C 150 60 120 110 120 150 L120 220 C 90 240 70 280 70 330 L70 470 L330 470 L330 330 C 330 280 310 240 280 220 L280 150 C 280 110 250 60 200 60 Z" fill="none" stroke="#571F2C" stroke-width="2.2" opacity="0.55"/>
+      <path d="M120 150 C 90 165 70 195 70 230 L70 260" fill="none" stroke="#571F2C" stroke-width="2.2" opacity="0.55"/>
+      <path d="M280 150 C 310 165 330 195 330 230 L330 260" fill="none" stroke="#571F2C" stroke-width="2.2" opacity="0.55"/>
+      <circle cx="200" cy="120" r="46" fill="none" stroke="#571F2C" stroke-width="2.2" opacity="0.55"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===================== KERUDUNG / PAKAIAN ===================== -->
+<section class="category" id="kerudung">
+  <div class="category-head">
+    <div>
+      <h2>Kerudung &amp; Atasan</h2>
+      <p class="desc">Voal, ceruti, dan pashmina dalam warna-warna yang mudah dipadukan.</p>
+    </div>
+    <span class="scroll-hint">geser →</span>
+  </div>
+  <div class="rail">
+
+    <article class="card">
+      <div class="thumb">
+        <img class="product-photo" src="GANTI_URL_FOTO_KERUDUNG_PASHMINA_DIAMOND" alt="Kerudung Pashmina Diamond" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <svg viewBox="0 0 120 120"><path d="M60 14c-18 0-30 14-30 28v10c-16 6-26 22-26 40v18h112V92c0-18-10-34-26-40V42c0-14-12-28-30-28z" fill="none" stroke="#6E2A3A" stroke-width="2.4"/><circle cx="60" cy="34" r="12" fill="none" stroke="#6E2A3A" stroke-width="2.4"/></svg>
+      </div>
+      <div class="info">
+        <div class="name">Kerudung Pashmina Diamond</div>
+        <div class="tag">Voal Premium · Jatuh Lembut</div>
+        <div class="price-row">
+          <span class="price">Rp 65.000</span>
+          <a class="order" href="#pesan">Pesan</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb">
+        <img class="product-photo" src="GANTI_URL_FOTO_KERUDUNG_SEGI_EMPAT_VOAL" alt="Kerudung Segi Empat Voal" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <svg viewBox="0 0 120 120"><path d="M60 14c-18 0-30 14-30 28v10c-16 6-26 22-26 40v18h112V92c0-18-10-34-26-40V42c0-14-12-28-30-28z" fill="none" stroke="#77815E" stroke-width="2.4"/><circle cx="60" cy="34" r="12" fill="none" stroke="#77815E" stroke-width="2.4"/></svg>
+      </div>
+      <div class="info">
+        <div class="name">Kerudung Segi Empat Voal</div>
+        <div class="tag">Motif Polos · Serbaguna</div>
+        <div class="price-row">
+          <span class="price">Rp 45.000</span>
+          <a class="order" href="#pesan">Pesan</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb">
+        <img class="product-photo" src="GANTI_URL_FOTO_KERUDUNG_INSTAN_CERUTI" alt="Kerudung Instan Ceruti" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <svg viewBox="0 0 120 120"><path d="M60 14c-18 0-30 14-30 28v10c-16 6-26 22-26 40v18h112V92c0-18-10-34-26-40V42c0-14-12-28-30-28z" fill="none" stroke="#C79A5C" stroke-width="2.4"/><circle cx="60" cy="34" r="12" fill="none" stroke="#C79A5C" stroke-width="2.4"/></svg>
+      </div>
+      <div class="info">
+        <div class="name">Kerudung Instan Ceruti</div>
+        <div class="tag">Praktis · Tanpa Peniti</div>
+        <div class="price-row">
+          <span class="price">Rp 55.000</span>
+          <a class="order" href="#pesan">Pesan</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb">
+        <img class="product-photo" src="GANTI_URL_FOTO_BLOUSE_MUSLIMAH_POLOS" alt="Blouse Muslimah Polos" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <svg viewBox="0 0 120 120"><path d="M40 20 L80 20 L84 40 L70 44 L70 100 L50 100 L50 44 L36 40 Z" fill="none" stroke="#6E2A3A" stroke-width="2.4"/></svg>
+      </div>
+      <div class="info">
+        <div class="name">Blouse Muslimah Polos</div>
+        <div class="tag">Katun Rayon · Adem</div>
+        <div class="price-row">
+          <span class="price">Rp 89.000</span>
+          <a class="order" href="#pesan">Pesan</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== CELANA ===================== -->
+<section class="category" id="celana">
+  <div class="category-head">
+    <div>
+      <h2>Celana Muslimah</h2>
+      <p class="desc">Longgar, sopan, dan tetap enak dipakai untuk beraktivitas.</p>
+    </div>
+    <span class="scroll-hint">geser →</span>
+  </div>
+  <div class="rail">
+
+    <article class="card">
+      <div class="thumb">
+        <img class="product-photo" src="GANTI_URL_FOTO_CELANA_KULOT_MUSLIMAH" alt="Celana Kulot Muslimah" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <svg viewBox="0 0 120 120"><path d="M42 18 L78 18 L82 100 L64 100 L60 50 L56 100 L38 100 Z" fill="none" stroke="#6E2A3A" stroke-width="2.4"/></svg>
+      </div>
+      <div class="info">
+        <div class="name">Celana Kulot Muslimah</div>
+        <div class="tag">Bahan Katun · Longgar</div>
+        <div class="price-row">
+          <span class="price">Rp 79.000</span>
+          <a class="order" href="#pesan">Pesan</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb">
+        <img class="product-photo" src="GANTI_URL_FOTO_CELANA_PALAZZO" alt="Celana Palazzo" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <svg viewBox="0 0 120 120"><path d="M42 18 L78 18 L84 100 L64 100 L60 50 L56 100 L36 100 Z" fill="none" stroke="#77815E" stroke-width="2.4"/></svg>
+      </div>
+      <div class="info">
+        <div class="name">Celana Palazzo</div>
+        <div class="tag">Kaki Lebar · Adem</div>
+        <div class="price-row">
+          <span class="price">Rp 85.000</span>
+          <a class="order" href="#pesan">Pesan</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb">
+        <img class="product-photo" src="GANTI_URL_FOTO_CELANA_CULLOTES_DENIM" alt="Celana Cullotes Denim" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <svg viewBox="0 0 120 120"><path d="M44 18 L76 18 L80 100 L62 100 L60 55 L58 100 L40 100 Z" fill="none" stroke="#C79A5C" stroke-width="2.4"/></svg>
+      </div>
+      <div class="info">
+        <div class="name">Celana Cullotes Denim</div>
+        <div class="tag">Semi Formal · Elastis</div>
+        <div class="price-row">
+          <span class="price">Rp 99.000</span>
+          <a class="order" href="#pesan">Pesan</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb">
+        <img class="product-photo" src="GANTI_URL_FOTO_CELANA_BAHAN_STRAIGHT" alt="Celana Bahan Straight" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <svg viewBox="0 0 120 120"><path d="M46 18 L74 18 L78 100 L62 100 L60 60 L58 100 L42 100 Z" fill="none" stroke="#6E2A3A" stroke-width="2.4"/></svg>
+      </div>
+      <div class="info">
+        <div class="name">Celana Bahan Straight</div>
+        <div class="tag">Kerja &amp; Kuliah</div>
+        <div class="price-row">
+          <span class="price">Rp 92.000</span>
+          <a class="order" href="#pesan">Pesan</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== PAKAIAN MUSLIM ===================== -->
+<section class="category" id="muslim">
+  <div class="category-head">
+    <div>
+      <h2>Pakaian Muslim</h2>
+      <p class="desc">Gamis dan setelan untuk ibadah maupun acara sehari-hari.</p>
+    </div>
+    <span class="scroll-hint">geser →</span>
+  </div>
+  <div class="rail">
+
+    <article class="card">
+      <div class="thumb">
+        <img class="product-photo" src="GANTI_URL_FOTO_GAMIS_SYAR_I_POLOS" alt="Gamis Syar'i Polos" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <svg viewBox="0 0 120 120"><path d="M60 16 C 50 16 44 26 44 34 L38 108 L82 108 L76 34 C 76 26 70 16 60 16 Z" fill="none" stroke="#6E2A3A" stroke-width="2.4"/><circle cx="60" cy="26" r="8" fill="none" stroke="#6E2A3A" stroke-width="2.4"/></svg>
+      </div>
+      <div class="info">
+        <div class="name">Gamis Syar'i Polos</div>
+        <div class="tag">Wolfis · Tidak Menerawang</div>
+        <div class="price-row">
+          <span class="price">Rp 145.000</span>
+          <a class="order" href="#pesan">Pesan</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb">
+        <img class="product-photo" src="GANTI_URL_FOTO_SET_TUNIK_AMP_ROK" alt="Set Tunik &amp; Rok" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <svg viewBox="0 0 120 120"><path d="M60 16 C 50 16 44 26 44 34 L38 108 L82 108 L76 34 C 76 26 70 16 60 16 Z" fill="none" stroke="#77815E" stroke-width="2.4"/><circle cx="60" cy="26" r="8" fill="none" stroke="#77815E" stroke-width="2.4"/></svg>
+      </div>
+      <div class="info">
+        <div class="name">Set Tunik &amp; Rok</div>
+        <div class="tag">2 Pcs · Senada</div>
+        <div class="price-row">
+          <span class="price">Rp 159.000</span>
+          <a class="order" href="#pesan">Pesan</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb">
+        <img class="product-photo" src="GANTI_URL_FOTO_ABAYA_MODERN" alt="Abaya Modern" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <svg viewBox="0 0 120 120"><path d="M60 16 C 48 16 42 28 42 36 L34 108 L86 108 L78 36 C 78 28 72 16 60 16 Z" fill="none" stroke="#C79A5C" stroke-width="2.4"/><circle cx="60" cy="26" r="8" fill="none" stroke="#C79A5C" stroke-width="2.4"/></svg>
+      </div>
+      <div class="info">
+        <div class="name">Abaya Modern</div>
+        <div class="tag">Simple · Elegan</div>
+        <div class="price-row">
+          <span class="price">Rp 175.000</span>
+          <a class="order" href="#pesan">Pesan</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb">
+        <img class="product-photo" src="GANTI_URL_FOTO_MUKENA_KATUN_JEPANG" alt="Mukena Katun Jepang" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+        <svg viewBox="0 0 120 120"><path d="M60 16 C 50 16 44 26 44 34 L38 108 L82 108 L76 34 C 76 26 70 16 60 16 Z" fill="none" stroke="#6E2A3A" stroke-width="2.4"/><circle cx="60" cy="26" r="8" fill="none" stroke="#6E2A3A" stroke-width="2.4"/></svg>
+      </div>
+      <div class="info">
+        <div class="name">Mukena Katun Jepang</div>
+        <div class="tag">Ringan · Dilipat Kecil</div>
+        <div class="price-row">
+          <span class="price">Rp 120.000</span>
+          <a class="order" href="#pesan">Pesan</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<div class="trust">
+  <div class="trust-item">
+    <div class="num">500+</div>
+    <div class="lbl">Pesanan terkirim</div>
+  </div>
+  <div class="trust-item">
+    <div class="num">4.9/5</div>
+    <div class="lbl">Rating dari pembeli</div>
+  </div>
+  <div class="trust-item">
+    <div class="num">1–3 Hari</div>
+    <div class="lbl">Estimasi pengiriman</div>
+  </div>
+  <div class="trust-item">
+    <div class="num">COD</div>
+    <div class="lbl">Tersedia di kota tertentu</div>
+  </div>
+</div>
+
+<footer id="pesan">
+  <div class="footer-inner">
+    <div>
+      <div class="brand">
+        <span class="mark">Maya Cooperation</span>
+        <span class="sub">BUSANA MUSLIMAH</span>
+      </div>
+      <p>Menjual kerudung, celana, dan pakaian muslim dengan bahan pilihan dan harga bersahabat.</p>
+    </div>
+    <div class="footer-col">
+      <h3>CARA PESAN</h3>
+      <span>1. Pilih produk di atas</span>
+      <span>2. Klik tombol Pesan</span>
+      <span>3. Konfirmasi via WhatsApp</span>
+    </div>
+    <div class="footer-col">
+      <h3>HUBUNGI KAMI</h3>
+      <a href="#">WhatsApp Admin</a>
+      <a href="#">Instagram</a>
+      <a href="#">Shopee &amp; Tokopedia</a>
+    </div>
+  </div>
+  <div class="thanks">
+    <div class="thanks-inner">
+      <div class="msg">Terima kasih atas pembeliannya di MAYA COOPERATION STARK</div>
+      <div class="brandline">MAYA COOPERATION</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
